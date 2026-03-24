@@ -1,6 +1,6 @@
 🧠 Evaluation & Scoring System Backend
 
-A scalable backend system built with Supabase to manage participants, submissions, judges, and evaluation scoring through REST APIs.
+«This project evolves from a structured database system into a revenue intelligence and decision-support system, enabling analysis of participant progression, performance, and drop-off across multi-stage workflows.»
 
 ---
 
@@ -10,9 +10,9 @@ This project simulates a real-world evaluation workflow where:
 
 - Participants submit entries
 - Judges evaluate submissions
-- Scores are stored and retrieved via APIs
+- Scores are stored and analyzed
 
-The system is designed to handle large datasets and structured evaluation processes using a relational database.
+The system is designed not just to store data, but to generate insights that support decision-making.
 
 ---
 
@@ -31,23 +31,89 @@ The system is designed to handle large datasets and structured evaluation proces
 The system includes the following tables:
 
 - "participants"
+- "categories"
+- "stages"
+- "tasks"
 - "submissions"
 - "judges"
 - "evaluations"
-- "categories"
-- "stages"
 - "stage_unlocks"
 - "audit_logs"
 
 ---
 
-📊 Dataset Summary
+🚀 Stage 2 Upgrade (Revenue Intelligence)
 
-- Participants: 500 records
-- Submissions: 250 records
-- Evaluations: 20+ records
+This project was extended in Stage 2 to transform the existing database into a decision-support and analytics system.
 
-The dataset was generated to simulate realistic evaluation scenarios.
+Enhancements:
+
+- Leveraged existing dataset (500 participants and staged submissions) for analysis
+- Implemented stage progression logic to model participant funnel behavior
+- Developed analytical queries to extract insights such as:
+  - stage conversion rates
+  - drop-off analysis
+  - top-performing participants
+  - judge workload distribution
+- Introduced an insight layer connecting data outputs to decision-making
+
+---
+
+📊 Insights Preview
+
+The system generates analytical insights that support decision-making across the evaluation process.
+
+🔹 Stage Conversion & Drop-Off
+
+- Tracks how participants progress from one stage to another
+- Identifies stages with the highest drop-off rates
+
+👉 Helps improve weak stages and increase retention
+
+---
+
+🔹 Participant Performance
+
+- Ranks participants based on average evaluation scores
+- Identifies top-performing candidates
+
+👉 Supports objective finalist selection
+
+---
+
+🔹 Deadline Compliance
+
+- Compares on-time vs late submissions
+- Highlights participant behavior over time
+
+👉 Helps adjust deadlines and improve submission rates
+
+---
+
+🔹 Judge Workload Distribution
+
+- Measures how evaluations are distributed across judges
+- Detects imbalance or overloading
+
+👉 Ensures fairness and better workload management
+
+---
+
+🔹 Category Performance
+
+- Compares average scores across categories
+- Identifies strong and weak categories
+
+👉 Guides improvements in underperforming areas
+
+---
+
+🔹 Full Funnel Analysis
+
+- Tracks participant journey from registration to final stage
+- Measures overall system efficiency
+
+👉 Enables data-driven decision-making and optimization
 
 ---
 
@@ -55,14 +121,13 @@ The dataset was generated to simulate realistic evaluation scenarios.
 
 Base URL:
 
-https://eyeqmvdsdspvbswytywwx.supabase.co/rest/v1/
+https://eyeqmvsdspybswytywwx.supabase.co/rest/v1/participants
 
-Endpoints:
+Example Endpoints:
 
-- "GET /participants"
-- "GET /submissions"
-- "GET /evaluations"
-- "POST /evaluations"
+- "/participants"
+- "/submissions"
+- "/evaluations"
 
 ---
 
@@ -78,57 +143,24 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 ---
 
-🧪 Sample Queries / Views
+🧪 How to Test
 
-The project includes queries for real-world operations such as:
-
-- Fetch all submissions with participant details
-- Retrieve evaluations by judge
-- Calculate average scores per submission
-- Rank participants based on scores
-- Filter submissions by category
-- Track evaluation progress
-- Identify top-performing participants
-- Aggregate scores by stage
+1. Open Postman
+2. Enter endpoint (e.g., "/participants")
+3. Add headers
+4. Send request
 
 ---
 
-🧱 DDL (Schema Creation)
+📄 Project Description
 
-The repository includes SQL scripts to:
-
-- Create all tables
-- Define relationships (foreign keys)
-- Enforce constraints
-
----
-
-🌱 Seed Data
-
-SQL scripts are included to populate:
-
-- 500 participants
-- 250 submissions
-- Evaluation data
+"Download Project Description" (project_description.pdf)
 
 ---
 
 📐 ER Diagram
 
-An Entity Relationship Diagram (ERD) is included to visualize:
-
-- Table relationships
-- Data flow
-- System structure
-
----
-
-🚀 How to Run / Test
-
-1. Open Postman
-2. Use any endpoint
-3. Add headers (apikey + Authorization)
-4. Send request
+"ER Diagram" (er_diagram.png)
 
 ---
 
@@ -136,17 +168,17 @@ An Entity Relationship Diagram (ERD) is included to visualize:
 
 This project demonstrates:
 
-- Backend system design at scale
-- Database modeling (PostgreSQL)
-- API development and testing
+- Relational database design
+- Workflow modeling and stage progression
+- Analytical querying for insights
 - Secure data access using RLS
-- Handling structured evaluation workflows
+- Building a decision-support system from structured data
 
 ---
 
 📌 Note
 
-This project focuses strictly on backend development.
+This project focuses on backend and data intelligence.
 No frontend interface is included.
 
 ---
